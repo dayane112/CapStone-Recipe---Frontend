@@ -1,0 +1,17 @@
+.navNotLogin {
+    padding-left: 10%;
+}
+
+.login {
+    float: right;
+    margin-right: 10%;
+}
+
+.login:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navLogin {
+    padding-left: 10%;
+}
