@@ -1,34 +1,39 @@
-import React, { useState, createContext, useContext, useMemo, useEffect } from 'react';
+import { useState, createContext, useContext, useMemo, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+
 
 const LoginContext = createContext();
 
 export default function LoginContextProvider({ children }) {
-    const [islogin, setIsLogin] = useState(false);
-    const [cookies, setCookies, removeCookies] = useCookies(['islogin']);
+    const [isLogin, setisLogin] = useState(false);
+    const [cookies, setCookies, removeCookies] = useCookies(['isLogin']);
+    const nav = useNavigate();
+
 
     useEffect(() => {
-        if (cookies.islogin === 'true') {
-            setIsLogin(true)
+        if (cookies.isLogin === 'true') {
+            setisLogin(true)
         }
-    }, [cookies.islogin])
+    }, [cookies.isLogin])
 
     function login() {
-        setIsLogin(true)
-        setCookies('islogin', 'true', { path: '/' })
+        setisLogin(true)
+        setCookies('isLogin', 'true', { path: '/' })
     };
 
-    function logOut() {
-        setIsLogin(false)
-        removeCookies('islogin', { path: '/' })
+    function logout() {
+        setisLogin(false)
+        removeCookies('isLogin', { path: '/' })
+        nav('/')
     };
 
     const value = useMemo(() => ({
-        islogin,
+        isLogin,
         login,
-        logOut
+        logout
     }),
-        [islogin]
+        [isLogin]
     );
 
 

@@ -1,9 +1,9 @@
-import NavLogin from "../components/navLogin"
+import NavBar from "../components/Nav";
 
 function AllRecipe() {
     return (
         <>
-            <NavLogin />
+            <NavBar />
             <h1>All Recipes</h1>;
         </>
     )

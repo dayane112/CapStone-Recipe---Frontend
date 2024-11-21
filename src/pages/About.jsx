@@ -1,10 +1,10 @@
-import NavNotLogin from "../components/navNotLogin";
+import NavBar from "../components/Nav";
 
 function About() {
     return (
         <>
-            <NavNotLogin />
-            <h1>About Us</h1>;
+            <NavBar />
+            <h1>About Us Page</h1>;
         </>
     )
 };
