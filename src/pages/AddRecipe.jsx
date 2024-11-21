@@ -18,7 +18,7 @@ function AddRecipe() {
         <>
             <NavBar />
             <h1>Add Recipes</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="recipeForm" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name: </label>
                     <input type="text" name="name" />

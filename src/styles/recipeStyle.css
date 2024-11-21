@@ -1,3 +1,7 @@
+body{
+    margin: 25px 60px 0px 60px;
+}
+
 input[type="text"] {
     border-radius: 5px;
     border-width: .5px;
@@ -6,12 +10,12 @@ input[type="text"] {
     /* align-items: end; */
 }
 
-/* .direction-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 10px;
-} */
+.direction-label {
+    /* display: flex;
+    align-items: flex-start; */
+    /* gap: 10px;
+    margin-bottom: 10px; */
+}
 
 
 
@@ -24,12 +28,20 @@ textarea {
 form label {
     display: inline-block;
     margin-bottom: 15px;
+    text-align: left;
+    width: 40%; 
 }
 
 form input, form select, form textarea {
     margin-left: 50px;
     /* float: right; */
 
+}
+
+.recipeForm {
+    width: 80%;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 /* .columns {
