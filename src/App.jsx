@@ -1,6 +1,4 @@
 import { useState } from 'react';
-
-import NavLogin from './components/navLogin';
 import { Route, Routes } from 'react-router-dom';
 import HomeNotLogin from './pages/HomeNotLogin';
 import HomeLogin from './pages/HomeLogin';
@@ -13,7 +11,6 @@ function App() {
 
   return (
     <main>
-      
       
       <Routes>
         <Route path='/' element={<HomeNotLogin />}/>
