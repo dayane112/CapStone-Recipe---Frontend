@@ -14,6 +14,10 @@ function AddRecipe() {
         e.preventDefault()
     }
 
+    function handleClick(e) {
+        nav('/addrecipe')
+    }
+
     return (
         <>
             <NavBar />
@@ -53,7 +57,7 @@ function AddRecipe() {
                     <textarea name="message" rows="10" cols="30"></textarea>
                 </div><br />
 
-                <button className="save">Save</button>
+                <button onClick={handleClick} className="save">Save</button>
             </form>
             
         </>
