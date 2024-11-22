@@ -26,7 +26,7 @@ function AddRecipe() {
 
                 <div className="form-group">
                     <label>Category: </label>
-                    <select name="category" value={category} onChange={e => handleCategoryChange(e.target.value)}>
+                    <select className="category" name="category" value={category} onChange={e => handleCategoryChange(e.target.value)}>
                         <option id="0" >--Select Category--</option>
                         <option name="breakfast" value="breakfast" id="1" >Breakfast</option>
                         <option name="lunch" value="lunch" id="2" >Lunch</option>
@@ -49,7 +49,7 @@ function AddRecipe() {
                 </div><br />
 
                 <div className="form-group" >
-                    <label class="direction-label">Direction: </label>
+                    <label className="direction-label">Direction: </label>
                     <textarea name="message" rows="10" cols="30"></textarea>
                 </div><br />
 

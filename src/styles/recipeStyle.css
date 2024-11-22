@@ -1,5 +1,5 @@
 body{
-    margin: 25px 60px 0px 60px;
+    margin: 25px 70px 0px 70px;
 }
 
 input[type="text"] {
@@ -17,7 +17,12 @@ input[type="text"] {
     margin-bottom: 10px; */
 }
 
-
+.category {
+    text-align: center;
+    width: 250px;
+    border-radius: 5px;
+    border-width: .5px;
+}
 
 textarea {
     border-radius: 10px;
@@ -27,9 +32,10 @@ textarea {
 
 form label {
     display: inline-block;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     text-align: left;
-    width: 40%; 
+    width: 25%; 
+    margin: 0px 0px 15px 0px;
 }
 
 form input, form select, form textarea {
@@ -39,9 +45,17 @@ form input, form select, form textarea {
 }
 
 .recipeForm {
-    width: 80%;
-    margin-left: 50px;
-    margin-right: 50px;
+    position: absolute;
+    width: 427px;
+    margin-left: 60px;
+    /* margin-right: 60px; */
+}
+
+button.save {
+    /* display: block; */
+    margin-top: 20px;
+    margin-right: 30px;
+    float: right;
 }
 
 /* .columns {
