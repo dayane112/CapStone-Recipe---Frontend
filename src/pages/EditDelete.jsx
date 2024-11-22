@@ -1,4 +1,3 @@
-import NavBar from "../components/Nav";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import '../styles/recipeStyle.css'
@@ -22,7 +21,6 @@ function Edit_Delete_Recipe() {
 
     return (
         <>
-            <NavBar />
             <h1>Edit/Delete Recipes</h1>
             <form className="recipeForm" onSubmit={handleSubmit}>
                 <div className="form-group">

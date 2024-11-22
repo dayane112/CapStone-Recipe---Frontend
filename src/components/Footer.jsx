@@ -45,7 +45,9 @@ function Footer() {
                     <path d="M14 8.5L11.5 10.5M16 11L13.5 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
 
-                this is the footer
+                <p>this is the footer</p>
+                <br />
+                <p>.</p>
             </div>
         </>
     )
