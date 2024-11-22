@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import AllRecipe from './pages/AllRecipe';
 import AddRecipe from './pages/AddRecipe';
-import EditDeleteRecipe from './pages/EditDelete';
+import Edit_Delete_Recipe from './pages/EditDelete';
 // import './App.css'
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/allrecipe" element={<AllRecipe />} />
         <Route path='/addrecipe' element={<AddRecipe />} />
-        <Route path='/addrecipe' element={<EditDeleteRecipe />} />
+        <Route path='/Edit_Delete_Recipe' element={<Edit_Delete_Recipe />} />
       </Routes>
 
 

@@ -2,7 +2,7 @@ import NavBar from "../components/Nav";
 import { useState } from "react";
 import '../styles/recipeStyle.css'
 
-function EditDeleteRecipe() {
+function Edit_Delete_Recipe() {
     const [category, setCategory] = useState('');
 
     const handleCategoryChange = (category) => {
@@ -65,4 +65,4 @@ function EditDeleteRecipe() {
     )
 }
 
-export default EditDeleteRecipe;
+export default Edit_Delete_Recipe;
