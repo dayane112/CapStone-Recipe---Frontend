@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 // import HomeLogin from './pages/HomeLogin';
 import About from './pages/About';
@@ -21,7 +22,7 @@ function App() {
         <Route path='/addrecipe' element={<AddRecipe />} />
         <Route path='/Edit_Delete_Recipe' element={<Edit_Delete_Recipe />} />
       </Routes>
-
+      <Footer />
 
     </main>
   )

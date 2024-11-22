@@ -1,9 +1,11 @@
 import NavBar from "../components/Nav";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import '../styles/recipeStyle.css'
 
 function AddRecipe() {
     const [category, setCategory] = useState('');
+    const nav = useNavigate();
 
     const handleCategoryChange = (category) => {
         setCategory(category);
@@ -15,7 +17,7 @@ function AddRecipe() {
     }
 
     function handleClick(e) {
-        nav('/addrecipe')
+        nav('/allrecipe')
     }
 
     return (

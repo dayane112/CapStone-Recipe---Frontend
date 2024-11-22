@@ -1,9 +1,11 @@
 import NavBar from "../components/Nav";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import '../styles/recipeStyle.css'
 
 function Edit_Delete_Recipe() {
     const [category, setCategory] = useState('');
+    const nav = useNavigate();
 
     const handleCategoryChange = (category) => {
         setCategory(category);
@@ -15,7 +17,7 @@ function Edit_Delete_Recipe() {
     }
 
     function handleClick(e) {
-        nav('/addrecipe')
+        nav('/allrecipe')
     }
 
     return (
@@ -57,8 +59,9 @@ function Edit_Delete_Recipe() {
                     <textarea name="message" rows="10" cols="30"></textarea>
                 </div><br />
 
-                <button onClick={handleClick} className="save">Edit</button>
+                <button onClick={handleClick} className="save">Save</button>
                 <button onClick={handleClick} className="save">Delete</button>
+                <button onClick={handleClick} className="save">Cancel</button>
             </form>
             
         </>
