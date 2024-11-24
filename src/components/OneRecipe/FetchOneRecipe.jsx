@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function RecipeFetching() {
+function FetchOneRecipe() {
 
     const [data, setData] = useState(null);
 
@@ -9,17 +9,24 @@ function RecipeFetching() {
 
     useEffect(() => {
         async function datafetching() {
-           const res = await axios.get(url)
-           setData(res.data)
+            const res = await axios.get(url)
+            setData(res.data)
+
         }
-        
+        datafetching()
+        // console.log(datafetching())
+
     }, [])
+
+    if (data === null) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <>
-        
+            
         </>
     )
 }
 
-export default RecipeFetching;
+export default FetchOneRecipe;

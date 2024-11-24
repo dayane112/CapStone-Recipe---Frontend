@@ -23,7 +23,7 @@ function App() {
         <Route path="/allrecipe" element={<AllRecipe />} />
         <Route path='/addrecipe' element={<AddRecipe />} />
         <Route path='/editrecipe' element={<Edit_Delete_Recipe />} />
-        <Route path='/onerecipe' element={<OneRecipe />} />
+        <Route path='/allrecipe/:id' element={<OneRecipe />} />
       </Routes>
       <Footer />
 
