@@ -17,12 +17,16 @@ function OneRecipe() {
 
     return (
         <>
-        <FetchOneRecipe />
-
-        {isEditing && <EditPage />}
-            <button onClick={handleEditClick}>Edit</button>
+            {!isEditing && !isDeleting && (
+                <>
+                    <FetchOneRecipe />
+                    <button onClick={handleEditClick}>Edit</button>
+                    <button onClick={handleDeleteClick}>Delete</button>
+                </>
+            )}
+            {isEditing && <EditPage setIsEditing={setIsEditing} />}
+            {/* <FetchOneRecipe /> */}
             {isDeleting && <DeleteRecipe />}
-            <button onClick={handleDeleteClick}>Delete</button>
         </>
     )
 };

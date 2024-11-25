@@ -97,6 +97,11 @@ function EditPage() {
         );
     }
 
+    function handleCancel(e) {
+        location.reload();
+    }
+
+
     return (
         <>
 
@@ -113,7 +118,7 @@ function EditPage() {
                 <br />
                 <label>
                     Difficulty Level:{' '}
-                    <input onChange={handleChange} value={recipeData.difficulty} type='text' name='difficulty' />
+                    <input onChange={handleChange} value={recipeData.level} type='text' name='level' />
                 </label>
                 <br />
                 <label>
@@ -159,6 +164,7 @@ function EditPage() {
 
                 <br />
                 <button tupe="submit">Save</button>
+                <button onClick={handleCancel}>Cancel</button>
                 
             </form>
 

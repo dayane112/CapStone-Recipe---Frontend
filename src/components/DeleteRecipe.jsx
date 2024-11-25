@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { deleteRecipe, findOneRecipe } from "../utilities/controller.mjs";
 import { useNavigate, useParams } from 'react-router-dom';
+import FetchOneRecipe from './OneRecipe/FetchOneRecipe';
 
 function DeleteRecipe() {
     const nav = useNavigate()
@@ -28,7 +29,7 @@ function DeleteRecipe() {
 
 
     function handleCancel(e) {
-        window.location.reload();
+        location.reload();
         // if (recipe && recipe._id) {
         //     nav(`/allrecipe/${recipe._id}`);
         // }
@@ -41,7 +42,8 @@ function DeleteRecipe() {
 
     return (
         <>
-            <h2>Are you sure you want to delete {recipe.name}?</h2>
+            <FetchOneRecipe />
+            <h2>Are you sure you want to delete {recipe.name} recipe?</h2>
 
             <button onClick={handleDelete}>Delete Recipe</button>
             <button onClick={handleCancel}>Cancel</button>

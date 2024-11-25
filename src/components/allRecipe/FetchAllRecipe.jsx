@@ -29,8 +29,9 @@ function FetchAllRecipe() {
             <div>
                 {data.map((recipe, i) => (
                     <div key={i} className="recipe">
-                     <img src={`http://localhost:3000/recipe/${recipe.image}`} alt={recipe.name} />   
-                     {/* {recipe.image} */}
+                     {/* <img src={`http://localhost:3000/recipe/${recipe.image}`} alt={recipe.name} />    */}
+                     <img src={recipe.image} alt={recipe.image} />
+                     
                        <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
                     </div>
                 ))}

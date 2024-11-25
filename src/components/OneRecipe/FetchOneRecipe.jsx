@@ -29,6 +29,7 @@ function FetchOneRecipe() {
         <>
             <div className="allRecipe">
                 <h2>{data.name}</h2>
+                <img src={data.image} alt={data.image} />
                 <p><strong>Category:</strong> {data.category}</p>
                 <p><strong>Difficulty Level:</strong> {data.level}</p>
                 <p><strong>Serving:</strong> {data.serving}</p>
