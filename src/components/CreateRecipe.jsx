@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createRecipe } from '../utilities/controller.mjs';
+import defaultImage from '../utilities/backgroundIMG.mjs';
 import '../styles/recipeStyle.css'
 
 function CreateRecipe() {
@@ -23,6 +24,8 @@ function CreateRecipe() {
             category: category
         });
     }
+
+    const defaultImg = defaultImage(recipeData.category);
 
     function handleChange(e) {
         setRecipeData({
@@ -116,7 +119,9 @@ function CreateRecipe() {
                         <option name="baking" value="baking" id="5" >Baking</option>
                         <option name="drink" value="drink" id="6" >Drink</option>
                     </select>
-                </div><br />
+                </div>
+                {defaultImg && <div className="recipe-image" style={{ defaultImg: `url(${defaultImg})` }}></div>}
+                <br />
 
                 <div className="form-group">
                     <label><strong>Difficulty Level: </strong></label><input type="text" name="level" value={recipeData.level} onChange={handleChange} />

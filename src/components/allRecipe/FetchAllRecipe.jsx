@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getRecipe } from "../../utilities/controller.mjs";
+import defaultImage from "../../utilities/backgroundIMG.mjs";
 import axios from "axios";
 
 function FetchAllRecipe() {
@@ -30,7 +31,7 @@ function FetchAllRecipe() {
                 {data.map((recipe, i) => (
                     <div key={i} className="recipe">
                      {/* <img src={`http://localhost:3000/recipe/${recipe.image}`} alt={recipe.name} />    */}
-                     <img src={recipe.image} alt={recipe.image} />
+                     <img src={recipe.image || defaultImage(recipe.category)} alt={recipe.image} />
                      
                        <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
                     </div>

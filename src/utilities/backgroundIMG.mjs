@@ -9,7 +9,7 @@ export default function defaultImage(category) {
         case 'dessert':
             return 'https://images.pexels.com/photos/6148264/pexels-photo-6148264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         case 'baking':
-            return 'https://www.pexels.com/photo/baking-gingerbread-cookies-for-christmas-14750105/'
+            return 'https://images.pexels.com/photos/14750105/pexels-photo-14750105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         case 'drink':
             return 'https://images.pexels.com/photos/28717625/pexels-photo-28717625/free-photo-of-bartender-pouring-cocktail-into-glasses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         default:

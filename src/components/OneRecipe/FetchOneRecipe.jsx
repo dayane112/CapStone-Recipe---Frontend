@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { findOneRecipe } from "../../utilities/controller.mjs";
+import defaultImage from "../../utilities/backgroundIMG.mjs";
 import axios from "axios";
 
 function FetchOneRecipe() {
@@ -29,7 +30,7 @@ function FetchOneRecipe() {
         <>
             <div className="allRecipe">
                 <h2>{data.name}</h2>
-                <img src={data.image} alt={data.image} />
+                <div className="ImgSize"><img src={data.image || defaultImage(data.category)} alt={data.image} /></div>
                 <p><strong>Category:</strong> {data.category}</p>
                 <p><strong>Difficulty Level:</strong> {data.level}</p>
                 <p><strong>Serving:</strong> {data.serving}</p>
@@ -48,6 +49,7 @@ function FetchOneRecipe() {
                         <li key={i}>{step}</li>
                     ))}
                 </ol>
+                {data.date}
             </div>
         </>
     )
