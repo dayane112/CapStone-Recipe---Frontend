@@ -154,11 +154,11 @@ function CreateRecipe() {
                                 )}
                             </div>
                         ))
-                    ) : null }
-                        < button type="button" onClick={addDirection}>Add Direction</button>
-            </div><br />
-            <button className="saveGroup" type="submit">Save</button>
-        </form >
+                    ) : null}
+                    < button type="button" onClick={addDirection}>+</button>
+                </div><br />
+                <button className="saveGroup" type="submit">Save</button>
+            </form >
 
         </>
     )

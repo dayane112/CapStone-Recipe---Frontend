@@ -4,17 +4,24 @@ import EditPage from "../components/EditeRecipe";
 
 function OneRecipe() {
     const [isEditing, setIsEditing] = useState(false);
+    const [isDeleting, setIsDeleting] = useState(false);
 
     function handleEditClick(e) {
         setIsEditing(true);
     }
+
+    function handleDeleteClick(e) {
+        setIsDeleting(true);
+    }
+
     return (
         <>
         <FetchOneRecipe />
 
         {isEditing && <EditPage />}
             <button onClick={handleEditClick}>Edit</button>
-            <button>Delete</button>
+            {isDeleting &&}
+            <button onClick={handleDeleteClick}>Delete</button>
         </>
     )
 };
