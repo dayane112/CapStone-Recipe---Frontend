@@ -1,15 +1,19 @@
 function SearchBar({data, setData}) {
 
+
     function handleChange(e) {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value
-        })
+       setData(e.target.value)
+       
+        // const { name, value } = e.target;
+        // setData((data) => ({
+        //     ...data,
+        //     [name]: value,
+        // }));
     }
 
     return (
         <>
-            <input onChange={handleChange} type="text" name="name" placeholder="Search"/>
+            <input onChange={handleChange} type="text" name="search" value={setData} placeholder="Search" />
         </>
     )
 }

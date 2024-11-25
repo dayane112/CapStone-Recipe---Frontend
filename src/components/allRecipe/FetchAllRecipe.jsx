@@ -7,6 +7,7 @@ import axios from "axios";
 function FetchAllRecipe() {
 
     const [data, setData] = useState(null);
+    const [search, setSearch] = useState("");
 
 
     useEffect(() => {

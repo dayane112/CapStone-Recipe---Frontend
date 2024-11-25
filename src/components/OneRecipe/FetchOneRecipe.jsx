@@ -26,10 +26,13 @@ function FetchOneRecipe() {
         return <div>Loading...</div>;
     }
 
+    const dateSetup = new Date(data.date).toLocaleDateString("en-US")
+
     return (
         <>
             <div className="allRecipe">
                 <h2>{data.name}</h2>
+               <p className="date">{dateSetup}</p>
                 <div className="ImgSize"><img src={data.image || defaultImage(data.category)} alt={data.image} /></div>
                 <p><strong>Category:</strong> {data.category}</p>
                 <p><strong>Difficulty Level:</strong> {data.level}</p>
@@ -49,7 +52,6 @@ function FetchOneRecipe() {
                         <li key={i}>{step}</li>
                     ))}
                 </ol>
-                {data.date}
             </div>
         </>
     )
