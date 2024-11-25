@@ -59,6 +59,10 @@ button.save {
     float: right;
 }
 
+.saveGroup {
+  margin-bottom: 200px;
+}
+
 /* .columns {
     display: flex;
     flex-direction: row;

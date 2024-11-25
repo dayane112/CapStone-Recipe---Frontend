@@ -15,7 +15,7 @@ function AllRecipe() {
     }
 
     function handleViewClick(e) {
-        nav('/allrecipe/:id')
+        nav(`/allrecipe/${res._id}`)
     }
 
     return (

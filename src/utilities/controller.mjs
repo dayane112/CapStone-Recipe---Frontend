@@ -16,8 +16,6 @@ async function createRecipe(recipeData) {
     try {
         let url = 'http://localhost:3000/recipe';
 
-        recipeData.price = '$' + recipeData.price;
-
         let res = await axios.post(url, recipeData);
 
         return res.data;
@@ -41,8 +39,6 @@ async function deleteRecipe(id) {
 async function updateRecipe(id, recipeData) {
     try {
         let url = `http://localhost:3000/recipe/${id}`;
-
-        recipeData.price = '$' + recipeData.price;
 
         let res = await axios.put(url, recipeData);
 
