@@ -31,7 +31,7 @@ function FetchOneRecipe() {
                 <h2>{data.name}</h2>
                 <p><strong>Category:</strong> {data.category}</p>
                 <p><strong>Difficulty Level:</strong> {data.level}</p>
-                <p><strong>Serving Size:</strong> {data.serving}</p>
+                <p><strong>Serving:</strong> {data.serving}</p>
                 <p><strong>Total Time:</strong> {data.total}</p>
 
                 <h3>Ingredients:</h3>

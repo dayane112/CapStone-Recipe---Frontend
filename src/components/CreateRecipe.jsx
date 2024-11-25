@@ -83,9 +83,11 @@ function CreateRecipe() {
         e.preventDefault()
         let res = await createRecipe(recipeData)
         if (res && res._id) {
-            setRecipeId(res._id);
+            nav(`/allrecipe/${res._id}`);
         }
     }
+
+
 
     return (
         <>
@@ -100,12 +102,12 @@ function CreateRecipe() {
             </svg></h1>
             <form className="recipeForm" onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Name: </label>
+                    <label><strong>Name: </strong></label>
                     <input type="text" name="name" value={recipeData.name} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
-                    <label>Category: </label>
+                    <label><strong>Category: </strong></label>
                     <select className="category" name="category" value={recipeData.category} onChange={e => handleCategoryChange(e.target.value)}>
                         <option id="0" >--Select Category--</option>
                         <option name="breakfast" value="breakfast" id="1" >Breakfast</option>
@@ -118,19 +120,19 @@ function CreateRecipe() {
                 </div><br />
 
                 <div className="form-group">
-                    <label>Level: </label><input type="text" name="level" value={recipeData.level} onChange={handleChange} />
+                    <label><strong>Difficulty Level: </strong></label><input type="text" name="level" value={recipeData.level} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
-                    <label>Serving: </label><input type="number" name="serving" value={recipeData.serving} onChange={handleChange} />
+                    <label><strong>Serving: </strong></label><input type="number" name="serving" value={recipeData.serving} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
-                    <label>Total time: </label><input type="text" name="total" value={recipeData.total} onChange={handleChange} />
+                    <label><strong>Total time: </strong></label><input type="text" name="total" value={recipeData.total} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
-                    <label>Ingredients:</label>
+                    <label><strong>Ingredients: </strong></label>
                     {recipeData.ingredient.length > 0 ? (
                         recipeData.ingredient.map((ingredient, i) => (
                             <div key={i}>
@@ -144,7 +146,7 @@ function CreateRecipe() {
                 </div>
 
                 <div className="deleteGroup">
-                    <label>Directions:</label>
+                    <label><strong>Directions: </strong></label>
                     {recipeData.direction.length > 0 ? (
                         recipeData.direction.map((direction, i) => (
                             <div key={i}>

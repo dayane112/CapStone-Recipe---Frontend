@@ -5,7 +5,8 @@ function OneRecipe() {
         <>
         <FetchOneRecipe />
 
-            <h1>One Recipe Page</h1>
+            <button>Edit</button>
+            <button>Delete</button>
         </>
     )
 };
