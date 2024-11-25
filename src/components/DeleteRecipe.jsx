@@ -20,25 +20,28 @@ function DeleteRecipe() {
 
     async function handleDelete() {
         const res = await deleteRecipe(id);
-      
+
         nav('/allrecipe');
 
-      }
+    }
 
-      
-    
-      function handleCancel (e){
-        nav(`/allrecipe/${recipe._id}`);
-      }
+
+
+    function handleCancel(e) {
+        window.location.reload();
+        // if (recipe && recipe._id) {
+        //     nav(`/allrecipe/${recipe._id}`);
+        // }
+    }
 
     if (!recipe) {
         return <h2>Loading</h2>;
     }
-   
+
 
     return (
         <>
-        <h2>Are you sure you want to delete your recipe?</h2>
+            <h2>Are you sure you want to delete {recipe.name}?</h2>
 
             <button onClick={handleDelete}>Delete Recipe</button>
             <button onClick={handleCancel}>Cancel</button>
