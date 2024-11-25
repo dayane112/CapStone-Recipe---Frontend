@@ -15,6 +15,7 @@ function CreateRecipe() {
         ingredient: [''],
         direction: [''],
     });
+    const [recipeId, setRecipeId] = useState(null)
 
 
     const handleCategoryChange = (category) => {
@@ -81,7 +82,9 @@ function CreateRecipe() {
     async function handleSubmit(e) {
         e.preventDefault()
         let res = await createRecipe(recipeData)
-        nav(`/allrecipe/${res._id}`)
+        if (res && res._id) {
+            setRecipeId(res._id);
+        }
     }
 
     return (

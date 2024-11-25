@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getRecipe } from "../../utilities/controller.mjs";
 import axios from "axios";
 
 function FetchAllRecipe() {
 
     const [data, setData] = useState(null);
 
-    const url = 'http://localhost:3000/recipe';
 
     useEffect(() => {
         async function datafetching() {
-            const res = await axios.get(url)
-            setData(res.data)
-            // console.log(res.data)
-            
+            const recipe = await getRecipe();
+            setData(recipe);           
 
         }
         datafetching()
@@ -29,11 +27,11 @@ function FetchAllRecipe() {
     return (
         <>
             <div>
-                {data.map((recipe, index) => (
-                    <div key={index} className="recipe">
+                {data.map((recipe, i) => (
+                    <div key={i} className="recipe">
                      <img src={`http://localhost:3000/recipe/${recipe.image}`} alt={recipe.name} />   
                      {/* {recipe.image} */}
-                       <Link to={`/allrecipe/${res._id}`}> <p>{recipe.name}</p></Link>
+                       <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
                     </div>
                 ))}
             </div>
