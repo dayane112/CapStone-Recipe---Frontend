@@ -15,7 +15,6 @@ function CreateRecipe() {
         ingredient: [''],
         direction: [''],
     });
-    const [recipeId, setRecipeId] = useState(null)
 
 
     const handleCategoryChange = (category) => {
