@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import FetchOneRecipe from "../components/OneRecipe/FetchOneRecipe";
 import EditPage from "../components/EditeRecipe";
+import DeleteRecipe from '../components/DeleteRecipe';
 
 function OneRecipe() {
     const [isEditing, setIsEditing] = useState(false);
@@ -20,7 +21,7 @@ function OneRecipe() {
 
         {isEditing && <EditPage />}
             <button onClick={handleEditClick}>Edit</button>
-            {isDeleting &&}
+            {isDeleting && <DeleteRecipe />}
             <button onClick={handleDeleteClick}>Delete</button>
         </>
     )
