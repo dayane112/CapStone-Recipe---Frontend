@@ -1,18 +1,64 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { createRecipe } from "../utilities/controller.mjs";
 import '../styles/recipeStyle.css'
 
 function AddRecipe() {
-    const [category, setCategory] = useState('');
     const nav = useNavigate();
 
+    const [recipeData, setRecipeData] = useState({
+        name: '',
+        category: '',
+        level: '',
+        serving: '',
+        total: '',
+        ingredient: [''],
+        direction: [''],
+    });
+
     const handleCategoryChange = (category) => {
-        setCategory(category);
-        console.log(category);
+        setRecipeData({
+            ...recipeData,
+            category: category
+        });
     }
 
-    function handleSubmit(e) {
+    function handleChange(e) {
+        setRecipeData({
+            ...recipeData,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    function handleIngredientChange(e, i) {
+        const newIngredient = [...recipeData.ingredient]
+        newIngredient[i] = e.target.value;
+        setRecipeData({
+            ...recipeData,
+            ingredient: newIngredient
+        })
+    };
+
+    function handleDirectionChange(e, i) {
+        const newDirection = [...recipeData.direction]
+        newDirection[i] = e.target.value;
+        setRecipeData({
+            ...recipeData,
+            direction: newDirection
+        })
+    };
+
+    const addIngredient = () => {
+        setRecipeData({
+            ...recipeData,
+            ingredient: [...recipeData.ingredient, '']
+        });
+    };
+
+    async function handleSubmit(e) {
         e.preventDefault()
+        let res = await createRecipe(recipeData)
+        nav(`/allrecipe/${res._id}`)
     }
 
     function handleClick(e) {
@@ -33,31 +79,42 @@ function AddRecipe() {
             <form className="recipeForm" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name: </label>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" value={recipeData.name} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
                     <label>Category: </label>
-                    <select className="category" name="category" value={category} onChange={e => handleCategoryChange(e.target.value)}>
+                    <select className="category" name="category" value={recipeData.category} onChange={e => handleCategoryChange(e.target.value)}>
                         <option id="0" >--Select Category--</option>
                         <option name="breakfast" value="breakfast" id="1" >Breakfast</option>
                         <option name="lunch" value="lunch" id="2" >Lunch</option>
                         <option name="dinner" value="dinner" id="3" >Dinner</option>
                         <option name="dessert" value="dessert" id="4" >Dessert</option>
-                        <option name="drink" value="drink" id="5" >Drink</option>
+                        <option name="baking" value="baking" id="5" >Baking</option>
+                        <option name="drink" value="drink" id="6" >Drink</option>
                     </select>
                 </div><br />
 
                 <div className="form-group">
-                    <label>Level: </label><input type="text" name="level" />
+                    <label>Level: </label><input type="text" name="level" value={recipeData.level} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
-                    <label>Serving: </label><input type="text" name="serving" />
+                    <label>Serving: </label><input  type="number" name="serving" value={recipeData.serving} onChange={handleChange} />
                 </div><br />
 
                 <div className="form-group">
-                    <label>Total time: </label><input type="text" name="total" />
+                    <label>Total time: </label><input type="text" name="total" value={recipeData.total} onChange={handleChange} />
+                </div><br />
+
+                <div className="form-group">
+                    <label>Ingredients:</label>
+                    {recipeData.ingredient.map((ingredient, i) => (
+                        <input key={i} type="text" value={ingredient} onChange={(e) => handleIngredientChange(e, i)} placeholder={`Ingredient ${i + 1}`}
+                        />
+                    ))}
+                    <button type="button" onClick={addIngredient}>+</button>
+                    
                 </div><br />
 
                 <div className="form-group" >
@@ -65,7 +122,7 @@ function AddRecipe() {
                     <textarea name="message" rows="10" cols="30"></textarea>
                 </div><br />
 
-                <button onClick={handleClick} className="save">Save</button>
+                <button className="save">Save</button>
             </form>
 
         </>

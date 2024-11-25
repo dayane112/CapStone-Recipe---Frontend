@@ -1,73 +1,73 @@
 import axios from 'axios';
 
-async function getInventory() {
-  try {
-    let url = 'http://localhost:3000/api/produce';
+async function getRecipe() {
+    try {
+        let url = 'http://localhost:3000/recipe';
 
-    let res = await axios.get(url);
+        let res = await axios.get(url);
 
-    return res.data;
-  } catch (err) {
-    console.error(err);
-  }
+        return res.data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-async function createProduce(formData) {
-  try {
-    let url = 'http://localhost:3000/api/produce';
+async function createRecipe(recipeData) {
+    try {
+        let url = 'http://localhost:3000/recipe';
 
-    formData.price = '$' + formData.price;
+        recipeData.price = '$' + recipeData.price;
 
-    let res = await axios.post(url, formData);
+        let res = await axios.post(url, recipeData);
 
-    return res.data;
-  } catch (err) {
-    console.error(err);
-  }
+        return res.data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-async function deleteProduce(id) {
-  try {
-    let url = `http://localhost:3000/api/produce/${id}`;
+async function deleteRecipe(id) {
+    try {
+        let url = `http://localhost:3000/recipe/${id}`;
 
-    let res = await axios.delete(url);
+        let res = await axios.delete(url);
 
-    return true;
-  } catch (err) {
-    console.error(err);
-  }
+        return true;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-async function updateProduce(id, formData) {
-  try {
-    let url = `http://localhost:3000/api/produce/${id}`;
+async function updateRecipe(id, recipeData) {
+    try {
+        let url = `http://localhost:3000/recipe/${id}`;
 
-    formData.price = '$' + formData.price;
+        recipeData.price = '$' + recipeData.price;
 
-    let res = await axios.put(url, formData);
+        let res = await axios.put(url, recipeData);
 
-    return res.data;
-  } catch (err) {
-    console.error(err);
-  }
+        return res.data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-async function findOneProduce(id) {
-  try {
-    let url = `http://localhost:3000/api/produce/${id}`;
+async function findOneRecipe(id) {
+    try {
+        let url = `http://localhost:3000/recipe/${id}`;
 
-    let res = await axios.get(url);
+        let res = await axios.get(url);
 
-    return res.data;
-  } catch (err) {
-    console.error(err);
-  }
+        return res.data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 export {
-  getInventory,
-  createProduce,
-  deleteProduce,
-  updateProduce,
-  findOneProduce,
+    getRecipe,
+    createRecipe,
+    deleteRecipe,
+    updateRecipe,
+    findOneRecipe,
 };
