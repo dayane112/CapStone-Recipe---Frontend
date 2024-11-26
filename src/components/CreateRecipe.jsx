@@ -93,8 +93,8 @@ function CreateRecipe() {
 
     return (
         <>
-            <h1> RECIPE<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="45" height="45" color="#39906d" fill="none" >
-                <g transform="scale(-1, 1) translate(-24, 0)">
+            <h1 className='recipeTitle'> Add Recipe<svg className='svgStyle' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" color="#39906d" fill="none" >
+                <g transform="scale(-1, 1) translate(-24, 2)">
                     <path d="M21 17C18.2386 17 16 14.7614 16 12C16 9.23858 18.2386 7 21 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     <path d="M21 21C16.0294 21 12 16.9706 12 12C12 7.02944 16.0294 3 21 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     <path d="M6 3L6 8M6 21L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -137,6 +137,7 @@ function CreateRecipe() {
 
                 <div className="form-group">
                     <label><strong>Ingredients: </strong></label>
+                    
                     {recipeData.ingredient.length > 0 ? (
                         recipeData.ingredient.map((ingredient, i) => (
                             <div className='alignRight' key={i}>
@@ -148,12 +149,13 @@ function CreateRecipe() {
                     ) : null}
                     <button className='rightBTN' type="button" onClick={addIngredient}>+</button>
                 </div>
+                <br />
 
                 <div className="deleteGroup">
                     <label><strong>Directions: </strong></label>
                     {recipeData.direction.length > 0 ? (
                         recipeData.direction.map((direction, i) => (
-                            <div key={i}>
+                            <div className='alignRight' key={i}>
                                 <textarea value={direction} onChange={(e) => handleDirectionChange(e, i)} placeholder={`Direction ${i + 1}`} /> {recipeData.direction.length > 1 && (
                                     <button type="button" onClick={() => removeDirection(i)}>-</button>
                                 )}

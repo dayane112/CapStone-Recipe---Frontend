@@ -1,3 +1,17 @@
+@import url("https://use.typekit.net/oem5whj.css");
+
+.recipeTitle {
+    margin-left: 90px;
+    margin-top: 90px;
+    font-family: "limon-script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+svg {
+    padding-top: 5px;
+}
+
 body{
     margin: 25px 70px 0px 70px;
 }
@@ -61,4 +75,11 @@ button.saveGroup, button.save {
 
 .alignRight {
     align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+form .ingredient-group, form .direction-group {
+    display: flex;
+    flex-direction: column;
 }

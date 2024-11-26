@@ -22,4 +22,4 @@ function AllRecipe() {
     )
 }
 
-export default AllRecipe
+export default AllRecipe;
