@@ -28,19 +28,17 @@
 
 .navContent {
     display: flex;
-    align-items: center; /* Vertically center the items */
-    justify-content: flex-start; /* Aligns items to the left */
-    gap: 10px; /* Adds space between links */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
-/* Grouping search bar and logo together */
 .searchAndLogo {
     display: flex;
-    align-items: center; /* Vertically center the items */
-    gap: 10px; /* Adds space between search bar and logo */
+    align-items: center;
+    gap: 10px;
 }
 
-/* Search bar style */
 .searchBar {
-    flex: 1; /* Make the search bar take the remaining space */
+    flex: 1;
 }

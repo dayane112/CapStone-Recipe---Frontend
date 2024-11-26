@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { findOneRecipe, updateRecipe } from "../utilities/controller.mjs";
 import FetchOneRecipe from './OneRecipe/FetchOneRecipe';
+import '../styles/EditRecipe.css'
 
 function EditPage() {
     const nav = useNavigate();
@@ -107,39 +108,40 @@ function EditPage() {
     return (
         <>
 
-            <form onSubmit={handleSubmit}>
+            <form className='ditRecipe' onSubmit={handleSubmit}>
+                <h1>Edit Recipe</h1>
                 <label>
-                    Name:{' '}
-                    <input onChange={handleChange} value={recipeData.name} type='text' name='name' />
+                    <p  className="spacing"><strong> Name:{' '}</strong></p>
+                    <input style={{marginLeft: '250px'}} onChange={handleChange} value={recipeData.name} type='text' name='name' />
                 </label>
                 <br />
                 <label>
-                    Category:{' '}
-                    <input onChange={handleChange} value={recipeData.category} type='text' name='category' />
+                    <p  className="spacing"><strong>Category:{' '}</strong></p>
+                    <input style={{marginLeft: '250px'}} onChange={handleChange} value={recipeData.category} type='text' name='category' />
                 </label>
                 <br />
                 <label>
-                    Difficulty Level:{' '}
-                    <input onChange={handleChange} value={recipeData.level} type='text' name='level' />
+                    <p  className="spacing"><strong>Difficulty Level:{' '}</strong></p>
+                    <input style={{marginLeft: '250px'}} onChange={handleChange} value={recipeData.level} type='text' name='level' />
                 </label>
                 <br />
                 <label>
-                    Serving:{' '}
-                    <input onChange={handleChange} value={recipeData.serving} type='number' name='serving' />
+                    <p  className="spacing"><strong>Serving:{' '}</strong></p>
+                    <input className='inputSection' onChange={handleChange} value={recipeData.serving} type='number' name='serving' />
                 </label>
                 <br />
                 <label>
-                    Total Time:{' '}
-                    <input onChange={handleChange} value={recipeData.total} type='text' name='total' />
+                    <p  className="spacing"><strong>Total Time:{' '}</strong></p>
+                    <input style={{marginLeft: '250px'}} onChange={handleChange} value={recipeData.total} type='text' name='total' />
                 </label>
                 <br />
 
                 <div className="form-group">
-                    <label>Ingredients: {' '}</label>
+                    <label><p  className="spacing"><strong>Ingredients: {' '}</strong></p></label>
                     {recipeData.ingredient.length > 0 ? (
                         recipeData.ingredient.map((ingredient, i) => (
-                            <div key={i}>
-                                <input type="text" value={ingredient} onChange={(e) => handleIngredientChange(e, i)} placeholder={`Ingredient ${i + 1}`} />{recipeData.ingredient.length > 1 && (
+                            <div className="inputSpace" key={i}>
+                                <input  type="text" value={ingredient} onChange={(e) => handleIngredientChange(e, i)} placeholder={`Ingredient ${i + 1}`} />{recipeData.ingredient.length > 1 && (
                                     <button type="button" onClick={() => removeIngredient(i)}>-</button>
                                 )}
                             </div>
@@ -151,11 +153,11 @@ function EditPage() {
 
 
                 <div className="deleteGroup">
-                    <label><strong>Directions: {' '}</strong></label>
+                    <label><p  className="spacing"><strong>Directions: {' '}</strong></p> </label>
                     {recipeData.direction.length > 0 ? (
                         recipeData.direction.map((direction, i) => (
                             <div key={i}>
-                                <textarea value={direction} onChange={(e) => handleDirectionChange(e, i)} placeholder={`Direction ${i + 1}`} /> {recipeData.direction.length > 1 && (
+                                <textarea className="listSpace" value={direction} onChange={(e) => handleDirectionChange(e, i)} placeholder={`Direction ${i + 1}`} /> {recipeData.direction.length > 1 && (
                                     <button type="button" onClick={() => removeDirection(i)}>-</button>
                                 )}
                             </div>
