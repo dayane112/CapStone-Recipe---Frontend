@@ -92,7 +92,7 @@ function CreateRecipe() {
 
 
     return (
-        <>
+        <> <div className="main-container">
             <h1 className='recipeTitle'> Add Recipe<svg className='svgStyle' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" color="#39906d" fill="none" >
                 <g transform="scale(-1, 1) translate(-24, 2)">
                     <path d="M21 17C18.2386 17 16 14.7614 16 12C16 9.23858 18.2386 7 21 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -137,7 +137,7 @@ function CreateRecipe() {
 
                 <div className="form-group">
                     <label><strong>Ingredients: </strong></label>
-                    
+
                     {recipeData.ingredient.length > 0 ? (
                         recipeData.ingredient.map((ingredient, i) => (
                             <div className='alignRight' key={i}>
@@ -166,7 +166,7 @@ function CreateRecipe() {
                 </div><br />
                 <button className="saveGroup" type="submit">Save</button>
             </form >
-
+        </div>
         </>
     )
 }
