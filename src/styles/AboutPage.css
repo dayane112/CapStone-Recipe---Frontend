@@ -1,0 +1,32 @@
+@import url("https://use.typekit.net/oem5whj.css");
+
+h1 {
+    margin-left: 90px;
+    margin-top: 90px;
+    font-family: "limon-script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.alignment p {
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.alignment {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 200px;
+}
+
+h2 {
+    margin-left: 50px;
+    font-family: "limon-script", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+}
+
+li {
+    margin-left: 50px;
+    margin-right: 90px;
+}

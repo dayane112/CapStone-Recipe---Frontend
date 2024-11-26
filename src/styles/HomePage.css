@@ -1,0 +1,15 @@
+@import url("https://use.typekit.net/oem5whj.css");
+
+h1 {
+    margin-left: 90px;
+    margin-top: 90px;
+    font-family: "limon-script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.Discover {
+    margin-left: 30px;
+    margin-right: 50px;
+    font-weight: 100;
+}
