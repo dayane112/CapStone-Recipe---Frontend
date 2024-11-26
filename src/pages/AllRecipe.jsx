@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import '../styles/AllRecipeStyle.css'
 import FetchAllRecipe from "../components/allRecipe/FetchAllRecipe";
 
 function AllRecipe() {
@@ -8,14 +7,6 @@ function AllRecipe() {
 
     function handleClick(e) {
         nav('/addrecipe')
-    }
-
-    function handleEditClick(e) {
-        nav('/editrecipe')
-    }
-
-    function handleViewClick(e) {
-        nav('/allrecipe/:id')
     }
 
     return (

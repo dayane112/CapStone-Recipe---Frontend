@@ -1,17 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useLogin } from '../context/loginContext';
+import { useState } from 'react';
 import '../styles/navStyle.css';
 import SearchBar from './SearchBar';
 
 function NavBar() {
     const { isLogin, login, logout } = useLogin()
 
-    // const nav = useNavigate();
-
-    //   function handleLogOut(e) {
-    //       nav('/')
-    //   }
-    
     return (
         <>
             <nav className='navLogin'>
@@ -41,4 +36,11 @@ function NavBar() {
     );
 }
 
-export default NavBar; 
+export default NavBar;  
+
+
+// const nav = useNavigate();
+
+    //   function handleLogOut(e) {
+    //       nav('/')
+    //   }

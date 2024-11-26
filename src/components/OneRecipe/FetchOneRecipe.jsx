@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { findOneRecipe } from "../../utilities/controller.mjs";
 import defaultImage from "../../utilities/backgroundIMG.mjs";
-import axios from "axios";
 
 function FetchOneRecipe() {
 

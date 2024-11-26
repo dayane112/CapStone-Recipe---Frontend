@@ -2,23 +2,19 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getRecipe } from "../../utilities/controller.mjs";
 import defaultImage from "../../utilities/backgroundIMG.mjs";
-import axios from "axios";
+import '../../styles/AllRecipeStyle.css'
 
 function FetchAllRecipe() {
 
     const [data, setData] = useState(null);
-    const [search, setSearch] = useState("");
-
 
     useEffect(() => {
         async function datafetching() {
             const recipe = await getRecipe();
-            setData(recipe);           
-
+            setData(recipe);
         }
         datafetching()
         // console.log(datafetching())
-
     }, [])
 
     if (data === null) {
@@ -26,15 +22,16 @@ function FetchAllRecipe() {
     }
 
 
+
     return (
         <>
             <div>
                 {data.map((recipe, i) => (
                     <div key={i} className="recipe">
-                     {/* <img src={`http://localhost:3000/recipe/${recipe.image}`} alt={recipe.name} />    */}
-                     <img src={recipe.image || defaultImage(recipe.category)} alt={recipe.image} />
-                     
-                       <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
+                        <div className="imageStyle">
+                            <img src={recipe.image || defaultImage(recipe.category)} alt={recipe.image} />
+                        </div>
+                        <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
                     </div>
                 ))}
             </div>
