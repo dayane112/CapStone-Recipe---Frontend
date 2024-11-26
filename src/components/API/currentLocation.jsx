@@ -70,7 +70,7 @@ export default function CurrentLocation() {
       {weather && !load && !error && (
         <div className="weather-data">
           <p>Weather of the Day </p>
-          <p>{weather[0]?.name}, {weather[0]?.country}!</p>
+          {/* <p>{weather[0]?.name}, {weather[0]?.country}!</p> */}
         </div>
       )}
     </>

@@ -7,6 +7,7 @@ import About from './pages/About';
 import AllRecipe from './pages/AllRecipe';
 import AddRecipe from './pages/AddRecipe';
 import OneRecipe from './pages/OneRecipe';
+import NotFound from './pages/NotFound';
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/allrecipe" element={<AllRecipe />} />
         <Route path='/addrecipe' element={<AddRecipe />} />
         <Route path='/allrecipe/:id' element={<OneRecipe />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
 
