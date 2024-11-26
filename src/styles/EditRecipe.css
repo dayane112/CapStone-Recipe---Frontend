@@ -13,4 +13,15 @@
     margin-left: 250px;
 }
 
-/*  style={{marginLeft: '200px'}} */
+.SaveBtn {
+    margin-left: 400px;
+}
+
+.addBTN {
+    margin-top: 10px;
+    margin-left: 510px;
+}
+
+.RemoveBTN {
+    margin-bottom: 10px;
+}

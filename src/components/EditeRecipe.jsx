@@ -142,12 +142,12 @@ function EditPage() {
                         recipeData.ingredient.map((ingredient, i) => (
                             <div className="inputSpace" key={i}>
                                 <input  type="text" value={ingredient} onChange={(e) => handleIngredientChange(e, i)} placeholder={`Ingredient ${i + 1}`} />{recipeData.ingredient.length > 1 && (
-                                    <button type="button" onClick={() => removeIngredient(i)}>-</button>
+                                    <button className='RemoveBTN' type="button" onClick={() => removeIngredient(i)}>-</button>
                                 )}
                             </div>
                         ))
                     ) : null}
-                    <button type="button" onClick={addIngredient}>+</button>
+                    <button className='addBTN' type="button" onClick={addIngredient}>+</button>
                 </div>
                 <br />
 
@@ -158,17 +158,19 @@ function EditPage() {
                         recipeData.direction.map((direction, i) => (
                             <div key={i}>
                                 <textarea className="listSpace" value={direction} onChange={(e) => handleDirectionChange(e, i)} placeholder={`Direction ${i + 1}`} /> {recipeData.direction.length > 1 && (
-                                    <button type="button" onClick={() => removeDirection(i)}>-</button>
+                                    <button className='RemoveBTN' type="button" onClick={() => removeDirection(i)}>-</button>
                                 )}
                             </div>
                         ))
                     ) : null}
-                    < button type="button" onClick={addDirection}>+</button>
+                    < button className='addBTN' type="button" onClick={addDirection}>+</button>
                 </div>
 
                 <br />
+                <div className='SaveBtn'>
                 <button tupe="submit">Save</button>
                 <button onClick={handleCancel}>Cancel</button>
+                </div>
                 
             </form>
 
