@@ -25,3 +25,22 @@
     font-weight: 400;
     font-style: normal;
 }
+
+.navContent {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 10px; /* Adds space between links */
+}
+
+/* Grouping search bar and logo together */
+.searchAndLogo {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    gap: 10px; /* Adds space between search bar and logo */
+}
+
+/* Search bar style */
+.searchBar {
+    flex: 1; /* Make the search bar take the remaining space */
+}

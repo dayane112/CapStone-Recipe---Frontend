@@ -10,31 +10,46 @@ function NavBar() {
     return (
         <>
             <nav className='navLogin'>
-                <Link to={'/'}>Home</Link>
-                {' | '}
+                {/* <Link to={'/'}>Home</Link>
+                {' | '} */}
                 {isLogin ? (
                     <>
-                        <Link to={'/allrecipe'}>All Recipe</Link>
-                        {' | '}
+                        <div className='navContent'>
+                            <Link to={'/'}>Home</Link> {/* Home link */}
+                            {' | '}
+                            <Link to={'/allrecipe'}>Recipe</Link>
+                            {' | '}
+                            <Link to={'/about'}>About</Link>
+                            {' | '}
 
-                        <Link to={'/about'}>About</Link>
-                        {' | '}
-
-                        <span className='searchBar'> <SearchBar /></span>
-                        <br />
-                        
+                            <div className='searchAndLogo'>
+                                <span className='searchBar'>
+                                    <SearchBar />
+                                </span>
+                                <img width="98" height="68" src="https://i.imgur.com/vmRvYF1.png" alt="Logo" />
+                            </div>
+                        </div>
                         <button onClick={logout} className='login'> LogOut</button>
                     </>
                 ) : (
                     <>
-                        
-                       
-                        <Link to={'/about'}>About</Link>
-                        {' | '}
 
-                        <span className='searchBar'> <SearchBar /></span>
+
+                        <div className='navContent'>
+                            <Link to={'/'}>Home</Link> {/* Home link */}
+                            {' | '}
+                            <Link to={'/about'}>About</Link>
+                            {' | '}
+
+                            <div className='searchAndLogo'>
+                                <span className='searchBar'>
+                                    <SearchBar />
+                                </span>
+                                <img width="98" height="68" src="https://i.imgur.com/vmRvYF1.png" alt="Logo" />
+                            </div>
+                        </div>
                         <br />
-                        
+
                         <button onClick={login} className='login'> Login / SignUp</button>
                     </>
                 )}
@@ -44,11 +59,11 @@ function NavBar() {
     );
 }
 
-export default NavBar;  
+export default NavBar;
 
 
 // const nav = useNavigate();
 
-    //   function handleLogOut(e) {
-    //       nav('/')
-    //   }
+//   function handleLogOut(e) {
+//       nav('/')
+//   }
