@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { deleteRecipe, findOneRecipe } from "../utilities/controller.mjs";
 import { useNavigate, useParams } from 'react-router-dom';
 import FetchOneRecipe from './OneRecipe/FetchOneRecipe';
+import '../styles/DeleteRecipe.css'
 
 function DeleteRecipe() {
     const nav = useNavigate()
@@ -44,9 +45,10 @@ function DeleteRecipe() {
         <>
             <FetchOneRecipe />
             <h2>Are you sure you want to delete {recipe.name} recipe?</h2>
-
-            <button onClick={handleDelete}>Delete Recipe</button>
-            <button onClick={handleCancel}>Cancel</button>
+            <div className='btn'>
+                <button onClick={handleDelete}>Delete Recipe</button>
+                <button onClick={handleCancel}>Cancel</button>
+            </div>
         </>
     )
 }
