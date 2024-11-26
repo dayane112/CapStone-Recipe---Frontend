@@ -2,14 +2,12 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-// import HomeLogin from './pages/HomeLogin';
 import NavBar from './components/Nav';
 import About from './pages/About';
 import AllRecipe from './pages/AllRecipe';
 import AddRecipe from './pages/AddRecipe';
-
 import OneRecipe from './pages/OneRecipe';
-// import './App.css'
+import './App.css'
 
 function App() {
 
