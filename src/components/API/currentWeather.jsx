@@ -62,8 +62,10 @@ export default function CurrentWeather() {
           {weatherData && !load && !error ? (
             <>
               <div>
-                <h2>{weatherData.main && weatherData.main.temp ? fahrenheitData(weatherData.main.temp).toFixed(1) : 'Unable to retrieve data'} °F</h2>
+                <p style={{ textAlign: 'center' }}> <strong> {weatherData?.main?.temp ? fahrenheitData(weatherData.main.temp).toFixed(1) : 'Unable to retrieve data'} °F</strong></p>
+                
                 <p>{weatherData.main && weatherData.main.temp_max ? fahrenheitData(weatherData.main.temp_max).toFixed(1) : 'Unable to retrieve data'} °F / {weatherData.main && weatherData.main.temp_min ? fahrenheitData(weatherData.main.temp_min).toFixed(1) : 'Unable to retrieve data'} °F</p>
+                <p style={{ fontSize: '9px', textAlign: 'center' }}>High / Low</p>
               </div>
             </>
           ) : null}

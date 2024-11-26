@@ -13,3 +13,19 @@ h1 {
     margin-right: 50px;
     font-weight: 100;
 }
+
+.currentLocation {
+    position: fixed;
+    bottom:110px;
+    right: 130px;
+    z-index: 1000;
+    background-color: #db8a3825;
+    padding: 10px 30px;
+    border-radius: 65px;
+    line-height: .5;
+  }
+  
+  .align {
+    display: inline-block;
+    margin-left: 10px;
+  }

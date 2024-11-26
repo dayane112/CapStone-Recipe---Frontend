@@ -69,45 +69,10 @@ export default function CurrentLocation() {
     <>
       {weather && !load && !error && (
         <div className="weather-data">
-          <h2>Weather of the Day for {weather[0]?.name}, {weather[0]?.country}!</h2>
+          <p>Weather of the Day </p>
+          <p>{weather[0]?.name}, {weather[0]?.country}!</p>
         </div>
       )}
     </>
   )
 }
-
-
-
-// async function currentLocation(fetchWeather) {
-//     const [lat, setLat] = useState(null);
-//     const [long, setLong] = useState(null);
-//     const [currentLocation, setCurrentLocation] = useState('');
-
-//     const apiKey = "eb889a65b1d1b573579883315f022ec8";
-
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(async (position) => {
-//             const { latitude, longitude } = position.coords;
-//             setLat(latitude);
-//             setLong(longitude);
-
-//             const reverseGeocodeUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
-//             const res = await fetch(reverseGeocodeUrl);
-//             const data = await res.json();
-
-
-//             setCurrentLocation(data.name);
-
-//             fetchWeather(latitude, longitude);
-//         });
-//     } else {
-//         setError('Location not available');
-//     }
-
-//     useEffect(() => {
-
-//         currentLocation(setLat, setLong, setCurrentLocation, fetchWeather);
-//       }, []);
-// }
-
-// export default currentLocation
