@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getRecipe } from "../../utilities/controller.mjs";
 import defaultImage from "../../utilities/backgroundIMG.mjs";
-import '../../styles/AllRecipeStyle.css'
+import '../../styles/FetchAllRecipeStyle.css'
 
 function FetchAllRecipe() {
 
@@ -25,13 +25,15 @@ function FetchAllRecipe() {
 
     return (
         <>
-            <div>
+            <div className="recipeContainer">
                 {data.map((recipe, i) => (
                     <div key={i} className="recipe">
-                        <div className="imageStyle">
+                            <div className="imageStyle">
                             <img src={recipe.image || defaultImage(recipe.category)} alt={recipe.image} />
-                        </div>
-                        <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
+                            </div>
+                            <div className="imageTextStyle">
+                            <Link to={`/allrecipe/${recipe._id}`}> <p>{recipe.name}</p></Link>
+                            </div>
                     </div>
                 ))}
             </div>

@@ -17,16 +17,24 @@ function NavBar() {
                         <Link to={'/allrecipe'}>All Recipe</Link>
                         {' | '}
 
-                        <SearchBar />
-                        {' | '}
                         <Link to={'/about'}>About</Link>
+                        {' | '}
+
+                        <span className='searchBar'> <SearchBar /></span>
+                        <br />
+                        
                         <button onClick={logout} className='login'> LogOut</button>
                     </>
                 ) : (
                     <>
-                        <SearchBar />
-                        {' | '}
+                        
+                       
                         <Link to={'/about'}>About</Link>
+                        {' | '}
+
+                        <span className='searchBar'> <SearchBar /></span>
+                        <br />
+                        
                         <button onClick={login} className='login'> Login / SignUp</button>
                     </>
                 )}

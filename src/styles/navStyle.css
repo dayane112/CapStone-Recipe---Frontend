@@ -1,17 +1,27 @@
-.navNotLogin {
-    padding-left: 10%;
+@import url("https://use.typekit.net/oem5whj.css");
+
+.searchBar {
+    float: right;
+    margin-right: 45px;
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    /* margin-right: 5%; */
 }
 
 .login {
     float: right;
-    margin-right: 10%;
+    margin-right: 5%;
+    margin-top: 30px;
 }
 
 .login:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .navLogin {
     padding-left: 10%;
+    font-family: "gelica", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }

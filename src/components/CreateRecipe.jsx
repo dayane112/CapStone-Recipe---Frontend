@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createRecipe } from '../utilities/controller.mjs';
 import defaultImage from '../utilities/backgroundIMG.mjs';
-import '../styles/recipeStyle.css'
+import '../styles/CreateRecipeStyle.css';
 
 function CreateRecipe() {
     const nav = useNavigate();
@@ -139,14 +139,14 @@ function CreateRecipe() {
                     <label><strong>Ingredients: </strong></label>
                     {recipeData.ingredient.length > 0 ? (
                         recipeData.ingredient.map((ingredient, i) => (
-                            <div key={i}>
+                            <div className='alignRight' key={i}>
                                 <input type="text" value={ingredient} onChange={(e) => handleIngredientChange(e, i)} placeholder={`Ingredient ${i + 1}`} />{recipeData.ingredient.length > 1 && (
                                     <button type="button" onClick={() => removeIngredient(i)}>-</button>
                                 )}
                             </div>
                         ))
                     ) : null}
-                    <button type="button" onClick={addIngredient}>+</button>
+                    <button className='rightBTN' type="button" onClick={addIngredient}>+</button>
                 </div>
 
                 <div className="deleteGroup">
@@ -160,7 +160,7 @@ function CreateRecipe() {
                             </div>
                         ))
                     ) : null}
-                    < button type="button" onClick={addDirection}>+</button>
+                    < button className='rightBTN' type="button" onClick={addDirection}>+</button>
                 </div><br />
                 <button className="saveGroup" type="submit">Save</button>
             </form >

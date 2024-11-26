@@ -11,10 +11,11 @@ function AllRecipe() {
 
     return (
         <>
-            <button onClick={handleClick} className="addRecipe"> + Add Recipe</button>
 
-            <h1>All Recipes</h1>
-
+            <h1 className="AllRecipe">All Recipes</h1>
+            <div className="buttonContainer">
+                <button onClick={handleClick} className="addRecipe"> + Add Recipe</button>
+            </div>
             <FetchAllRecipe />
 
         </>
